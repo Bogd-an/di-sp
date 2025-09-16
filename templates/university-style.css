@@ -1,0 +1,55 @@
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 1.5;
+    margin: 2cm;
+}
+
+/* Заголовки */
+h1 { font-size: 18pt; text-align: center; margin-top: 20px; margin-bottom: 15px; text-transform: uppercase; }
+h2 { font-size: 14pt; margin-top: 15px; margin-bottom: 10px; }
+h3 { font-size: 12pt; margin-top: 12px; margin-bottom: 8px; }
+
+/* Таблиці */
+table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+table, th, td { border: 1px solid black; }
+th, td { padding: 5px; text-align: center; font-size: 11pt; }
+
+/* Лісти коду */
+pre, code {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    background-color: #f5f5f5;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* Підписи до зображень */
+img { display: block; margin-left: auto; margin-right: auto; max-width: 90%; }
+figcaption { font-size: 10pt; text-align: center; margin-top: 3px; }
+
+/* Блоки цитат / висновки */
+blockquote { font-style: italic; margin-left: 0; padding-left: 10px; border-left: 3px solid #000; }
+
+/* Нумерація лістингів */
+code::before { content: "Лістинг "; font-weight: bold; }
+
+/* Розрив сторінки після титульної */
+.page-break { page-break-after: always; }
+/* Розрив сторінки */
+.page-break {
+    page-break-after: always;
+}
+
+@media print {
+    .page-break { display: block; page-break-after: always; }
+}
+
+hr.page-break {
+    page-break-before: always;
+    border: none;
+    margin: 0;
+}
