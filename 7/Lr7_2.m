@@ -1,9 +1,9 @@
 I=imread('leaf.jpg');
-% Чотири параметри
-scale=1.2; % коефіцієнт масштабування
-angle=40*pi/180; % кут повороту
-tx=0; % зсув по x
-ty=0; % зсув по y
+% Р§РѕС‚РёСЂРё РїР°СЂР°РјРµС‚СЂРё
+scale=1.2; % РєРѕРµС„С–С†С–С”РЅС‚ РјР°СЃС€С‚Р°Р±СѓРІР°РЅРЅСЏ
+angle=40*pi/180; % РєСѓС‚ РїРѕРІРѕСЂРѕС‚Сѓ
+tx=0; % Р·СЃСѓРІ РїРѕ x
+ty=0; % Р·СЃСѓРІ РїРѕ y
 sc=scale*cos(angle);
 ss=scale*sin(angle);
 T=[ sc -ss;
@@ -36,7 +36,7 @@ imshow(I_projective)
 title('projective')
 xybase=reshape(randn(12, 1), 6, 2);
 t_poly=cp2tform(xybase, xybase, 'polynomial', 2);
-% Дванадцять елементів T.
+% Р”РІР°РЅР°РґС†СЏС‚СЊ РµР»РµРјРµРЅС‚С–РІ T.
 T= [0 0;
  1 0;
  0 1;
@@ -50,7 +50,7 @@ imshow(I_polynomial)
 title('polynomial')
 imid=round(size(I, 2)/2);
 I_left=I(:, 1:imid);
-stretch=1.5; % Коефіціент розтягнення
+stretch=1.5; % РљРѕРµС„С–С†С–РµРЅС‚ СЂРѕР·С‚СЏРіРЅРµРЅРЅСЏ
 size_right=[size(I, 1) round(stretch*imid)];
 I_right=I(:, imid+1:end);
 I_right_stretched=imresize(I_right, size_right);
@@ -60,7 +60,7 @@ imshow(I_piecewiselinear)
 title('piecewise linear')
 [nrows, ncols]=size(I);
 [xi, yi]=meshgrid(1:ncols, 1:nrows);
-a1=5; % амплітуда синусоїди.
+a1=5; % Р°РјРїР»С–С‚СѓРґР° СЃРёРЅСѓСЃРѕС—РґРё.
 a2=3;
 u=xi+a1*sin(pi*xi/imid);
 v=yi-a2*sin(pi*yi/imid);
